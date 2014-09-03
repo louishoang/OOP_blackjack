@@ -7,7 +7,7 @@ class Card
   end
 
   def pretty_output
-    "The #{face_value} of #{find_suit}"
+    "The #{face_value} #{find_suit}"
   end
 
   def to_s
@@ -16,10 +16,10 @@ class Card
 
   def find_suit
     ret_val = case suit
-                when 'H' then 'Hearts'
-                when 'D' then 'Diamonds'
-                when 'S' then 'Spades'
-                when 'C' then 'Clubs'
+                when 'H' then '♥'
+                when 'D' then '♦'
+                when 'S' then '♠'
+                when 'C' then '♣'
               end
     ret_val
   end
@@ -77,7 +77,6 @@ module Hand
       break if total <= 21
       total -= 10
     end
-
     total
   end
 
